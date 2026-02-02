@@ -1,0 +1,2 @@
+[console_scripts]
+atw-pp = atw_pp.cli:main

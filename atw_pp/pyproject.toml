@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atw_pp"
+version = "0.4.1"
+description = "Role + plugin based metadata builder for structural datasets"
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+  "atomworks",
+]
+
+[project.optional-dependencies]
+ml = ["atomworks[ml]"]
+dev = ["atomworks[dev]"]
+openbabel = ["atomworks[openbabel]"]
+all = ["atomworks[ml,openbabel,dev]"]
+
+[tool.setuptools]
+packages = [
+  "atw_pp",
+  "atw_pp.io",
+  "atw_pp.core",
+  "atw_pp.plugins",
+  "atw_pp.tables",
+]
+
+[project.scripts]
+atw-pp = "atw_pp.cli:main"
