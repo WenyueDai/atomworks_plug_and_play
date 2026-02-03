@@ -8,6 +8,7 @@ Conflict = Literal["keep_row", "overwrite"]
 
 @dataclass(frozen=True, slots=True)
 class RoleSpec:
+    # example: ('H', 'L1')
     chain_ids: Tuple[str, ...] = ()
 
 @dataclass(frozen=True, slots=True)

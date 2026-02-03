@@ -1,0 +1,10 @@
+*.egg-info/
+.vscode/
+*.code-workspace
+*.log
+*.tmp
+*.swp
+*.parquet
+*.csv
+__pycache__/
+*/__pycache__/

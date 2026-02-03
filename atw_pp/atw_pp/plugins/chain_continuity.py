@@ -13,7 +13,7 @@ class ChainContinuityPlugin:
             if arr is None or len(arr) == 0:
                 continue
             try:
-                ok = struc.check_chain_continuity(arr)
+                ok = struc.check_backbone_continuity(arr)
                 if isinstance(ok, (bool, np.bool_)):
                     has_break = not bool(ok)
                     n_breaks = int(has_break)
