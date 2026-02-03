@@ -29,7 +29,7 @@ class InterfaceContactsPlugin:
                 left.coord,
                 right.coord,
                 contact_cutoff=5.0,
-                clash_cutoff=2.0,
+                clash_cutoff=1.0,
                 cell_size=6.0,
             )
 
@@ -40,6 +40,6 @@ class InterfaceContactsPlugin:
                 "role_left": str(left_role),
                 "role_right": str(right_role),
                 "contact_cutoff": 5.0,
-                "clash_cutoff": 2.0,
+                "clash_cutoff": 1.0,
                 **stats,
             }

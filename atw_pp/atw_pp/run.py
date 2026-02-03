@@ -43,6 +43,22 @@ def build_metadata(
     param_csvs: list[Path] | None = None,
     paragraph_preds: Path | None = None,
 ) -> None:
+    
+    """For each CIF/PDB: 
+    - build ctx (chains, roles)
+    - run plugins (configured in cfg.plugins, plg.run(ctx))
+    - plugins yield dict per row for tables: structures, chains, roles, interfaces
+    - collect rows into dataframes according to table
+    - save dataframes as parquet files
+    
+    Args:
+        cif_dir: Directory containing CIF/PDB files to process.
+        out_dir: Directory to save output parquet files.
+        cfg: Configuration for metadata extraction.
+        param_csvs: Optional list of CSV files containing additional parameters to attach.
+        paragraph_preds: Optional path to Paragraph prediction CSV file.
+    """
+    
     out_dir.mkdir(parents=True, exist_ok=True)
 
     paths = list_structures(cif_dir)
